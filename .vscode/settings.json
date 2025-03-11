@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "GeoCipher.sln"
+    "dotnet.defaultSolution": "comp225.sln"
 }

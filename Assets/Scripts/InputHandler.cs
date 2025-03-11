@@ -37,12 +37,21 @@ public class InputHandler : MonoBehaviour
 
             // when clicked, go to openBook scene
             SceneController.instance.ChangeScene("BookScene");
+            
         }else if(rayHit.collider.CompareTag("TV")){
              Debug.Log($"Object Name: {rayHit.collider.gameObject.name}, Tag: {rayHit.collider.tag}");
             
 
             // when clicked, go to TV scene
             SceneController.instance.ChangeScene("TVScene");
+        }
+
+        else if(rayHit.collider.CompareTag("Painting")){
+             Debug.Log($"Object Name: {rayHit.collider.gameObject.name}, Tag: {rayHit.collider.tag}");
+            
+
+            // when clicked, go to Painting scene
+            SceneController.instance.ChangeScene("PictureScene");
         }
         
     }
