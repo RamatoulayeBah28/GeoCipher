@@ -9,6 +9,7 @@ TagManager:
   - Painting
   - Exit
   - ExitBook
+  - Drawer
   layers:
   - Default
   - TransparentFX

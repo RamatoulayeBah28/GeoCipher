@@ -11,6 +11,8 @@ public class InputHandler : MonoBehaviour
     public Texture2D cursorTexture;
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
+    [SerializeField]
+    GameObject codePanel;
 
     private void Awake()
     {
@@ -64,6 +66,18 @@ public class InputHandler : MonoBehaviour
             // when clicked, go to openBook scene
             SceneController.instance.ChangeScene("Scenes/SampleScene");
         }
+         else if (rayHit.collider.CompareTag("Drawer")) {
+            Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+            // Successfully hit the game object
+            Debug.Log($"Object Name: {rayHit.collider.gameObject.name}, Tag: {rayHit.collider.tag}");
+
+            // when clicked, go to drawer scene
+            SceneController.instance.ChangeScene("DrawerScene");
+
+            
+
+        }
+
         
     }
 

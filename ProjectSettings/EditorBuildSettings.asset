@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TVScene.unity
     guid: 60942ef5a3f47442bb7df679e6bea94b
+  - enabled: 1
+    path: Assets/Scenes/DrawerScene.unity
+    guid: a808b4b31717f4c45b999fdb43854450
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
