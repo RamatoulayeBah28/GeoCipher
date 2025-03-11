@@ -7,6 +7,8 @@ TagManager:
   - Book
   - TV
   - Painting
+  - Exit
+  - ExitBook
   layers:
   - Default
   - TransparentFX

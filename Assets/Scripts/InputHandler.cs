@@ -30,6 +30,7 @@ public class InputHandler : MonoBehaviour
             return;        
         }
 
+
         if (rayHit.collider.CompareTag("Book")) {
              Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
             // Successfully hit the game object
@@ -52,6 +53,16 @@ public class InputHandler : MonoBehaviour
 
             // when clicked, go to Painting scene
             SceneController.instance.ChangeScene("PictureScene");
+        }
+
+        // x symbol when clicking on it, goes back to sample scene
+        else if (rayHit.collider.CompareTag("ExitBook")) {
+            Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+            // Successfully hit the game object
+            Debug.Log($"Object Name: {rayHit.collider.gameObject.name}, Tag: {rayHit.collider.tag}");
+
+            // when clicked, go to openBook scene
+            SceneController.instance.ChangeScene("Scenes/SampleScene");
         }
         
     }
