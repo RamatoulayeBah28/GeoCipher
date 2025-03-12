@@ -83,7 +83,7 @@ public class InputHandler : MonoBehaviour
         }
 
         // x symbol when clicking on it, goes back to sample scene
-        else if (rayHit.collider.CompareTag("ExitBook"))
+        else if (rayHit.collider.CompareTag("Exit"))
         {
             Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
             // Successfully hit the game object
@@ -99,58 +99,5 @@ public class InputHandler : MonoBehaviour
                 Debug.LogError("SceneController instance is null. Make sure it's added to the scene.");
             }
         }
-
-        else if (rayHit.collider.CompareTag("ExitClock"))
-        {
-            Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
-            // Successfully hit the game object
-            Debug.Log($"Object Name: {rayHit.collider.gameObject.name}, Tag: {rayHit.collider.tag}");
-
-            // when clicked, go back to room scene
-            if (SceneController.instance != null)
-            {
-                SceneController.instance.ChangeScene("Scenes/RoomScene");
-            }
-            else
-            {
-                Debug.LogError("SceneController instance is null. Make sure it's added to the scene.");
-            }
-        }
-
-        else if (rayHit.collider.CompareTag("ExitPainting"))
-        {
-            Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
-            // Successfully hit the game object
-            Debug.Log($"Object Name: {rayHit.collider.gameObject.name}, Tag: {rayHit.collider.tag}");
-
-            // when clicked, go back to room scene
-            if (SceneController.instance != null)
-            {
-                SceneController.instance.ChangeScene("Scenes/RoomScene");
-            }
-            else
-            {
-                Debug.LogError("SceneController instance is null. Make sure it's added to the scene.");
-            }
-        }
-
-        else if (rayHit.collider.CompareTag("ExitTV"))
-        {
-            Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
-            // Successfully hit the game object
-            Debug.Log($"Object Name: {rayHit.collider.gameObject.name}, Tag: {rayHit.collider.tag}");
-
-            // when clicked, go back to room scene
-            if (SceneController.instance != null)
-            {
-                SceneController.instance.ChangeScene("Scenes/RoomScene");
-            }
-            else
-            {
-                Debug.LogError("SceneController instance is null. Make sure it's added to the scene.");
-            }
-        }
-
     }
-
 }
