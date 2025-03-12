@@ -17,7 +17,7 @@ public class CodePanel : MonoBehaviour
     {
         codeText.text = codeTextValue;
         if (codeTextValue == "1234") {
-            SceneController.instance.ChangeScene("Scenes/SampleScene");
+            SceneController.instance.ChangeScene("Scenes/RoomScene");
         }
 
         if (codeTextValue.Length >= 4) {
