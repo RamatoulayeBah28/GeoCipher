@@ -10,6 +10,8 @@ TagManager:
   - Exit
   - ExitBook
   - Drawer
+  - Clock
+  - ExitClock
   layers:
   - Default
   - TransparentFX

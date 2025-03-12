@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PictureScene.unity
     guid: d4d9897b4ef9a47e0ba8ea2c708dc87e
   - enabled: 1
-    path: Assets/Scenes/ClockSceneTest.unity
+    path: Assets/Scenes/ClockScene.unity
     guid: 9f01039a8d5462148810b19a6e9bf01c
   - enabled: 1
     path: Assets/Scenes/TVScene.unity

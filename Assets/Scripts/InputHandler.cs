@@ -56,6 +56,23 @@ public class InputHandler : MonoBehaviour
             // when clicked, go to Painting scene
             SceneController.instance.ChangeScene("PictureScene");
         }
+        else if (rayHit.collider.CompareTag("Drawer")) {
+            Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+            // Successfully hit the game object
+            Debug.Log($"Object Name: {rayHit.collider.gameObject.name}, Tag: {rayHit.collider.tag}");
+
+            // when clicked, go to drawer scene
+            SceneController.instance.ChangeScene("DrawerScene");
+        }
+
+        else if (rayHit.collider.CompareTag("Clock")) {
+            Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+            // Successfully hit the game object
+            Debug.Log($"Object Name: {rayHit.collider.gameObject.name}, Tag: {rayHit.collider.tag}");
+
+            // when clicked, go to drawer scene
+            SceneController.instance.ChangeScene("ClockScene");
+        }
 
         // x symbol when clicking on it, goes back to sample scene
         else if (rayHit.collider.CompareTag("ExitBook")) {
@@ -64,19 +81,19 @@ public class InputHandler : MonoBehaviour
             Debug.Log($"Object Name: {rayHit.collider.gameObject.name}, Tag: {rayHit.collider.tag}");
 
             // when clicked, go to openBook scene
-            SceneController.instance.ChangeScene("Scenes/SampleScene");
+            SceneController.instance.ChangeScene("Scenes/RoomScene");
         }
-         else if (rayHit.collider.CompareTag("Drawer")) {
+
+        else if (rayHit.collider.CompareTag("ExitClock")) {
             Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
             // Successfully hit the game object
             Debug.Log($"Object Name: {rayHit.collider.gameObject.name}, Tag: {rayHit.collider.tag}");
 
-            // when clicked, go to drawer scene
-            SceneController.instance.ChangeScene("DrawerScene");
-
-            
-
+            // when clicked, go to openBook scene
+            SceneController.instance.ChangeScene("Scenes/RoomScene");
         }
+
+        
 
         
     }
