@@ -12,6 +12,8 @@ TagManager:
   - Drawer
   - Clock
   - ExitClock
+  - ExitPainting
+  - ExitTV
   layers:
   - Default
   - TransparentFX
