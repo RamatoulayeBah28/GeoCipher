@@ -14,6 +14,17 @@ TagManager:
   - ExitClock
   - ExitPainting
   - ExitTV
+  - RemoteButton1
+  - RemoteButton2
+  - RemoteButton3
+  - RemoteButton4
+  - RemoteButton5
+  - RemoteButton6
+  - RemoteButton7
+  - RemoteButton8
+  - ' RemoteButton9'
+  - RemoteButton0
+  - RemoteButtonOK
   layers:
   - Default
   - TransparentFX
