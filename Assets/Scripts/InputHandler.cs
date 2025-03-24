@@ -83,7 +83,7 @@ public class InputHandler : MonoBehaviour
         }
 
         // x symbol when clicking on it, goes back to sample scene
-        else if (rayHit.collider.CompareTag("Exit"))
+        else if (rayHit.collider.CompareTag("Exit") || rayHit.collider.CompareTag("ExitTV"))
         {
             Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
             // Successfully hit the game object
