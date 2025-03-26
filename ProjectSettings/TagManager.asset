@@ -8,12 +8,9 @@ TagManager:
   - TV
   - Painting
   - Exit
-  - ExitBook
   - Drawer
   - Clock
-  - ExitClock
-  - ExitPainting
-  - ExitTV
+  - Clue
   layers:
   - Default
   - TransparentFX

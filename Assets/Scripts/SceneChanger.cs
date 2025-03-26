@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputHandler : MonoBehaviour
+public class SceneChanger : MonoBehaviour
 {
     private Camera _mainCamera;
 
@@ -16,35 +16,27 @@ public class InputHandler : MonoBehaviour
 
         var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
 
-        // checking that what the ray hits is not null
         if (!rayHit.collider)
         {
             Debug.Log("No valid object clicked");
             return;
         }
 
-        // x symbol when clicking on it, goes back to sample scene
-        else if (rayHit.collider.CompareTag("Exit"))
-        {
-            // Successfully hit the game object
-            Debug.Log("Exiting");
-
-            // when clicked, go to openBook scene
+        // Log the object info and change scene based on its name.
+        if(rayHit.collider.CompareTag("Clue")){
+            string objectName = rayHit.collider.gameObject.name;
+            Debug.Log($"Object Name: {objectName}");
+            
+            // Scene names HAVE TO FOLLOW a naming convention like "ObjectNameScene"
+            string sceneToLoad = objectName + "Scene";
             if (SceneController.instance != null)
             {
-                SceneController.instance.ChangeScene("Scenes/RoomScene");
+                SceneController.instance.ChangeScene(sceneToLoad);
             }
             else
             {
                 Debug.LogError("SceneController instance is null. Make sure it's added to the scene.");
             }
-        }
-        else {
-            string tag = rayHit.collider.tag.ToString();
-            Debug.Log($"Object Name: {rayHit.collider.gameObject.name}, Tag: {tag}");
-
-            string scene = tag + "Scene";
-            SceneController.instance.ChangeScene(scene);
         }
     }
 }
