@@ -8,23 +8,9 @@ TagManager:
   - TV
   - Painting
   - Exit
-  - ExitBook
   - Drawer
   - Clock
-  - ExitClock
-  - ExitPainting
-  - ExitTV
-  - RemoteButton1
-  - RemoteButton2
-  - RemoteButton3
-  - RemoteButton4
-  - RemoteButton5
-  - RemoteButton6
-  - RemoteButton7
-  - RemoteButton8
-  - ' RemoteButton9'
-  - RemoteButton0
-  - RemoteButtonOK
+  - Clue
   layers:
   - Default
   - TransparentFX
