@@ -740,6 +740,8 @@ GameObject:
   - component: {fileID: 1011038972}
   - component: {fileID: 1011038971}
   - component: {fileID: 1011038970}
+  - component: {fileID: 1011038974}
+  - component: {fileID: 1011038973}
   m_Layer: 0
   m_Name: InputHandler
   m_TagString: Untagged
@@ -824,6 +826,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1011038973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011038969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 202de643a9fc94a2cbd53c1016e71574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 0}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
+  codePanel: {fileID: 0}
+--- !u!114 &1011038974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011038969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97075215338604d38aeccad64616d0ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 0}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
+  codeText: 
 --- !u!1 &1129521195
 GameObject:
   m_ObjectHideFlags: 0

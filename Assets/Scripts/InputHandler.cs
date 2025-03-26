@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +14,7 @@ public class InputHandler : MonoBehaviour
     public Vector2 hotSpot = Vector2.zero;
     [SerializeField]
     GameObject codePanel;
+    String codeText = "";
 
     private void Awake()
     {
@@ -99,5 +101,9 @@ public class InputHandler : MonoBehaviour
                 Debug.LogError("SceneController instance is null. Make sure it's added to the scene.");
             }
         }
+      
+           
+            
+
+        }
     }
-}
