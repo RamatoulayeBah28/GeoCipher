@@ -78,6 +78,7 @@ public class Clock : MonoBehaviour
 
         if(Mathf.Abs(minute - mins) < 2 && hour == hrs){
             Debug.Log("Corret Time. Open the Picture");
+            AudioManager.instance.PlayUnlocked();
         }
         else{
             Debug.Log("Wrong Time");
