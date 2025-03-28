@@ -15,5 +15,6 @@ public class ClueExit : MonoBehaviour
         {
             Debug.LogError("SceneController instance is null. Make sure it's added to the scene.");
         }
+        AudioManager.instance.PlayClue();
     }
 }

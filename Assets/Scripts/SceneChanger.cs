@@ -19,6 +19,7 @@ public class SceneChanger : MonoBehaviour
         if (!rayHit.collider)
         {
             Debug.Log("No valid object clicked");
+            AudioManager.instance.PlayNegative();
             return;
         }
 
@@ -29,6 +30,7 @@ public class SceneChanger : MonoBehaviour
             
             // Scene names HAVE TO FOLLOW a naming convention like "ObjectNameScene"
             string sceneToLoad = objectName + "Scene";
+            AudioManager.instance.PlayClue();
             if (SceneController.instance != null)
             {
                 SceneController.instance.ChangeScene(sceneToLoad);
