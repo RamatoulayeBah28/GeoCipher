@@ -21,6 +21,8 @@ TagManager:
   - RemoteButton4
   - RemoteButton2
   - RemoteButton
+  - Map
+  - UserGuess
   layers:
   - Default
   - TransparentFX
