@@ -969,6 +969,7 @@ GameObject:
   - component: {fileID: 1028939494}
   - component: {fileID: 1028939496}
   - component: {fileID: 1028939495}
+  - component: {fileID: 1028939497}
   m_Layer: 0
   m_Name: InputHandler
   m_TagString: Untagged
@@ -1049,6 +1050,20 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1028939497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028939493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6869e9611c8f6f44e841c095ce300cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverCursor: {fileID: 2800000, guid: 49d60a2caa4cb0f4fb6a123c0a889f44, type: 3}
+  cursorHotspot: {x: 0, y: 0}
 --- !u!1 &1153701683
 GameObject:
   m_ObjectHideFlags: 0
