@@ -39,6 +39,7 @@ public class SceneChanger : MonoBehaviour
             {
                 Debug.LogError("SceneController instance is null. Make sure it's added to the scene.");
             }
+            
         }
     }
 }
