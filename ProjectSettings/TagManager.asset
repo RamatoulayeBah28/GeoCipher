@@ -11,6 +11,16 @@ TagManager:
   - Drawer
   - Clock
   - Clue
+  - RemoteButton6
+  - RemoteButton0
+  - RemoteButton8
+  - ' RemoteButton9'
+  - RemoteButton1
+  - RemoteButton7
+  - RemoteButton3
+  - RemoteButton4
+  - RemoteButton2
+  - RemoteButton
   layers:
   - Default
   - TransparentFX
