@@ -275,6 +275,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 55179457025268196, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 308.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 55179457025268196, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 39.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 55179457025268196, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
       propertyPath: m_LocalScale.x
       value: 10.989143
       objectReference: {fileID: 0}
@@ -288,11 +296,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 55179457025268196, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -858
+      value: -791
       objectReference: {fileID: 0}
     - target: {fileID: 55179457025268196, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2899
+      value: 2845.4
       objectReference: {fileID: 0}
     - target: {fileID: 321680659142786272, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
       propertyPath: m_Type
@@ -388,7 +396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4102253031891067749, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
       propertyPath: m_Text
-      value: 'Channel: '
+      value: Enter Channel
       objectReference: {fileID: 0}
     - target: {fileID: 4102253031891067749, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
       propertyPath: m_Color.b
