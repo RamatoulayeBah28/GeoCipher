@@ -306,6 +306,18 @@ PrefabInstance:
       propertyPath: m_Type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 438170739765954189, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 494205146}
+    - target: {fileID: 438170739765954189, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddChannel
+      objectReference: {fileID: 0}
+    - target: {fileID: 438170739765954189, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChannelSelector, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 450129938691672476, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -386,13 +398,81 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 709399256065336997, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 494205146}
+    - target: {fileID: 709399256065336997, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddChannel
+      objectReference: {fileID: 0}
+    - target: {fileID: 709399256065336997, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChannelSelector, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 781086050523141577, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 494205146}
+    - target: {fileID: 781086050523141577, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddChannel
+      objectReference: {fileID: 0}
+    - target: {fileID: 781086050523141577, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChannelSelector, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882314295447738666, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882314295447738666, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 494205146}
+    - target: {fileID: 1882314295447738666, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddChannel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882314295447738666, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChannelSelector, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1962441833194140237, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2165093134542796960, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 494205146}
+    - target: {fileID: 2165093134542796960, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddChannel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2165093134542796960, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChannelSelector, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2193513355826417695, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
       propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2616695384394814568, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_CullTransparentMesh
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3119516173836201647, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 494205146}
+    - target: {fileID: 3119516173836201647, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddChannel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3119516173836201647, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChannelSelector, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4102253031891067749, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
       propertyPath: m_Text
@@ -413,6 +493,42 @@ PrefabInstance:
     - target: {fileID: 4102253031891067749, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
       propertyPath: m_FontData.m_FontStyle
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546954236964206956, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 494205146}
+    - target: {fileID: 5546954236964206956, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddChannel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546954236964206956, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChannelSelector, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5964959611089928009, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 494205146}
+    - target: {fileID: 5964959611089928009, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddChannel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5964959611089928009, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChannelSelector, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095430728326149537, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 494205146}
+    - target: {fileID: 6095430728326149537, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddChannel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095430728326149537, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChannelSelector, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6821470877187507069, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
       propertyPath: m_BlockingObjects
@@ -449,6 +565,18 @@ PrefabInstance:
     - target: {fileID: 8597516800820511366, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -542.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635960239311619661, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 494205146}
+    - target: {fileID: 8635960239311619661, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddChannel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635960239311619661, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChannelSelector, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9164261884925671793, guid: 7214e74b4af934f80a7523ae45cd731e, type: 3}
       propertyPath: m_PresetInfoIsWorld
