@@ -23,6 +23,7 @@ TagManager:
   - RemoteButton
   - Map
   - UserGuess
+  - Welcome
   layers:
   - Default
   - TransparentFX
