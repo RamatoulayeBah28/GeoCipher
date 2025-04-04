@@ -350,8 +350,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minuteHand: {fileID: 975815622}
   hourHand: {fileID: 128397477}
-  hour: 10
-  minute: 10
+  hour: 1
+  minute: 20
 --- !u!224 &282273607
 RectTransform:
   m_ObjectHideFlags: 0
