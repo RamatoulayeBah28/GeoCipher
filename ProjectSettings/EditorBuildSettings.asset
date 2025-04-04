@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/BookScene.unity
     guid: 8d618fde11c4b49ae9742624b1643de3
   - enabled: 1
-    path: Assets/Scenes/PaintingScene.unity
+    path: Assets/Scenes/OpenPaintingScene.unity
     guid: d4d9897b4ef9a47e0ba8ea2c708dc87e
   - enabled: 1
     path: Assets/Scenes/ClockScene.unity
@@ -32,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TVChannelScene.unity
     guid: 5044e059fad2042f99fa33b45fd5e71b
+  - enabled: 1
+    path: Assets/Scenes/PaintingScene.unity
+    guid: 06ca0e1f00ee80a44aa2c6d5b31d8287
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

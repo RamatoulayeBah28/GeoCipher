@@ -15,6 +15,8 @@ public class Clock : MonoBehaviour
     public int hour = 10;
     public int minute = 10;
 
+    private bool isUnlocked = false;
+
     private void Start(){
         min = minuteHand.transform;
         minCol = minuteHand.GetComponent<Collider2D>();
@@ -60,28 +62,32 @@ public class Clock : MonoBehaviour
 
     private void Time()
     {
-        float minAngle = min.eulerAngles.z;
-        float hrAngle = hr.eulerAngles.z;
-    
-        int mins = Mathf.CeilToInt(minAngle / 360f * 60f);
-        int hrs = Mathf.CeilToInt(hrAngle / 360f * 12f);
-    
-        if (hrs == 0){
-            hrs = 12;
-        } else if(hrs != 12){
-            hrs = 12 - hrs;
-        }
+        if(!isUnlocked){
+            float minAngle = min.eulerAngles.z;
+            float hrAngle = hr.eulerAngles.z;
+        
+            int mins = Mathf.CeilToInt(minAngle / 360f * 60f);
+            int hrs = Mathf.CeilToInt(hrAngle / 360f * 12f);
+        
+            if (hrs == 0){
+                hrs = 12;
+            } else if(hrs != 12){
+                hrs = 12 - hrs;
+            }
 
-        mins = (105 - mins) % 60;
-    
-        Debug.Log("Hour:" + hrs + ", " + "Minute:" + mins);
+            mins = (105 - mins) % 60;
+        
+            Debug.Log("Hour:" + hrs + ", " + "Minute:" + mins);
 
-        if(Mathf.Abs(minute - mins) < 2 && hour == hrs){
-            Debug.Log("Corret Time. Open the Picture");
-            AudioManager.instance.PlayUnlocked();
-        }
-        else{
-            Debug.Log("Wrong Time");
+            if(Mathf.Abs(minute - mins) < 2 && hour == hrs){
+                Debug.Log("Corret Time. Open the Picture");
+                AudioManager.instance.PlayUnlocked();
+                isUnlocked = true;
+                ClueManager.instance.isPaintingUnlocked = true;
+            }
+            else{
+                Debug.Log("Wrong Time");
+            }
         }
     }
 

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class CodePanel : MonoBehaviour
 {
+    private bool isUnlocked = false;
     [SerializeField]
     Text codeText;
     string codeTextValue = "";
@@ -17,6 +18,8 @@ public class CodePanel : MonoBehaviour
     {
         codeText.text = codeTextValue;
         if (codeTextValue == "5510") {
+            isUnlocked = true;
+            ClueManager.instance.isDrawerUnlocked = true;
             SceneController.instance.ChangeScene("Scenes/OpenDrawerScene");
         }
 
