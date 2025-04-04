@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Collections;
 
 
 public class CodePanel : MonoBehaviour
@@ -11,36 +12,49 @@ public class CodePanel : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI codeText;
     string codeTextValue = "";
+    string correctCode = "5510";
     void Start()
     {
         gameObject.SetActive(true); 
     }
     void Update()
     {
-       
-        if (codeText != null)
-        {
-            // If codeTextValue is empty, show "Enter Code", otherwise, show the actual codeTextValue (the digits the player entered)
-            codeText.text = string.IsNullOrEmpty(codeTextValue) ? "Enter Code" : codeTextValue;
-        }
-
-        if (!isUnlocked)
-        {
-            if (codeTextValue == "5510")
-            {
-                codeText.color = Color.green;
-                AudioManager.instance.PlayUnlocked();
-                isUnlocked = true;
-                ClueManager.instance.isDrawerUnlocked = true;
-                SceneController.instance.ChangeScene("Scenes/OpenDrawerScene");
-            }
-
-            if (codeTextValue.Length == 4)
-            {
-                codeTextValue = "";
-            }
-        }
+       if (codeText != null)
+    {
+        codeText.text = string.IsNullOrEmpty(codeTextValue) ? "Enter Code" : codeTextValue;
     }
+
+    if (!isUnlocked && codeTextValue.Length == 4)
+    {
+        StartCoroutine(HandleCodeEntry());
+    }
+    }
+
+    IEnumerator HandleCodeEntry()
+{
+    //  lets the last digit appear
+    yield return new WaitForSeconds(0.1f);
+
+    if (codeTextValue == correctCode)
+    {
+        codeText.text = "CORRECT";
+        codeText.color = Color.green;
+        AudioManager.instance.PlayUnlocked();
+        isUnlocked = true;
+        ClueManager.instance.isDrawerUnlocked = true;
+        SceneController.instance.ChangeScene("Scenes/OpenDrawerScene");
+    }
+    else
+    {
+        AudioManager.instance.PlayNegative();
+        codeText.color = Color.red;
+        codeText.text = "INCORRECT";
+        yield return new WaitForSeconds(1f);
+        codeText.color = Color.white;
+        codeTextValue = "";
+        
+    }
+}
 
     public void AddDigit(string digit) {
         codeTextValue += digit;
