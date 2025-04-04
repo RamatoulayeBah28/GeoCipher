@@ -17,14 +17,17 @@ public class CodePanel : MonoBehaviour
     void Update()
     {
         codeText.text = codeTextValue;
-        if (codeTextValue == "5510") {
-            isUnlocked = true;
-            ClueManager.instance.isDrawerUnlocked = true;
-            SceneController.instance.ChangeScene("Scenes/OpenDrawerScene");
-        }
+        if(!isUnlocked){
+            if (codeTextValue == "5510") {
+                AudioManager.instance.PlayUnlocked();
+                isUnlocked = true;
+                ClueManager.instance.isDrawerUnlocked = true;
+                SceneController.instance.ChangeScene("Scenes/OpenDrawerScene");
+            }
 
-        if (codeTextValue.Length >= 4) {
-            codeTextValue = "";
+            if (codeTextValue.Length >= 4) {
+                codeTextValue = "";
+            }
         }
     }
 

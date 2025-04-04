@@ -12,7 +12,6 @@ public class CursorChanger : MonoBehaviour
         _mainCamera = Camera.main;
         if (hoverCursor != null)
         {
-            // Change the hotspot after changing the cursor texture
             cursorHotspot = new Vector2(hoverCursor.width * 5/12, 0);
         }
     }
@@ -22,7 +21,7 @@ public class CursorChanger : MonoBehaviour
     {
         var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Input.mousePosition));
 
-        if (rayHit.collider != null && rayHit.collider.CompareTag("Clue"))
+        if (rayHit.collider != null)
         {
             Cursor.SetCursor(hoverCursor, cursorHotspot, CursorMode.Auto);
         }
