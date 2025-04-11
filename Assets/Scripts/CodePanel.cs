@@ -12,7 +12,7 @@ public class CodePanel : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI codeText;
     string codeTextValue = "";
-    string correctCode = "1055";
+    string correctCode = "5510";
     void Start()
     {
         gameObject.SetActive(true); 
