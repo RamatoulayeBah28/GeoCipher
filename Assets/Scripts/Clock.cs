@@ -17,6 +17,11 @@ public class Clock : MonoBehaviour
 
     private bool isUnlocked = false;
 
+    private bool testHourDrag = false;
+    private bool hasDraggedHour = false;
+
+    private bool testMinDrag = false;
+    private bool hasDraggedMin = false;
     private void Start(){
         min = minuteHand.transform;
         minCol = minuteHand.GetComponent<Collider2D>();
@@ -31,11 +36,15 @@ public class Clock : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {   
             if(minCol == Physics2D.OverlapPoint(mousePos)){
+                testMinDrag = true;
+                hasDraggedMin = true;
                 screenPos = Camera.main.WorldToScreenPoint(min.position);
                 Vector3 vec3 = Input.mousePosition - screenPos;
                 angleOffset = (Mathf.Atan2(min.right.y, min.right.x) - Mathf.Atan2(vec3.y, vec3.x)) * Mathf.Rad2Deg;
             }
             if(hrCol == Physics2D.OverlapPoint(mousePos)){
+                testHourDrag = true;
+                hasDraggedHour = true;
                 screenPos = Camera.main.WorldToScreenPoint(hr.position);
                 Vector3 vec3 = Input.mousePosition - screenPos;
                 angleOffset = (Mathf.Atan2(hr.right.y, hr.right.x) - Mathf.Atan2(vec3.y, vec3.x)) * Mathf.Rad2Deg;
@@ -43,19 +52,35 @@ public class Clock : MonoBehaviour
         }
         if (Input.GetMouseButton(0))
         {
-            if(minCol == Physics2D.OverlapPoint(mousePos)){
+            if(testMinDrag){
+            // if(minCol == Physics2D.OverlapPoint(mousePos)){
                 Vector3 vec3 = Input.mousePosition - screenPos;
                 float angle = Mathf.Atan2(vec3.y, vec3.x) * Mathf.Rad2Deg;
                 min.eulerAngles = new Vector3(0, 0, angle + angleOffset);
             }
-            if(hrCol == Physics2D.OverlapPoint(mousePos)){
+            if(testHourDrag){
+            // if(hrCol == Physics2D.OverlapPoint(mousePos)){
                 Vector3 vec3 = Input.mousePosition - screenPos;
                 float angle = Mathf.Atan2(vec3.y, vec3.x) * Mathf.Rad2Deg;
                 hr.eulerAngles = new Vector3(0, 0, angle + angleOffset);
             }
         }
         if(Input.GetMouseButtonUp(0)){
-            Time();
+            if(testMinDrag)
+            {
+                testMinDrag = false;
+            }
+
+            if(testHourDrag)
+            {
+                testHourDrag = false;
+            }
+
+            if(!testMinDrag && !testHourDrag && hasDraggedHour && hasDraggedMin)
+            {
+                Time();
+            }
+            // Time();
         }
     }
 
@@ -84,9 +109,12 @@ public class Clock : MonoBehaviour
                 AudioManager.instance.PlayUnlocked();
                 isUnlocked = true;
                 ClueManager.instance.isPaintingUnlocked = true;
+                SceneController.instance.ChangeScene("RoomScene");
             }
             else{
                 Debug.Log("Wrong Time");
+                ClueManager.instance.isPaintingAttemptWrong = true;
+                SceneController.instance.ChangeScene("RoomScene");
             }
         }
     }
