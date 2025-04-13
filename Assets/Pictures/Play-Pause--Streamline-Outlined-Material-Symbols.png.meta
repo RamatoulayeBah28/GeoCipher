@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b337c05eafe3a4d2da707e27694abc1a
+guid: fe7d5c553f28247789b149e014a2c449
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8432262319979487476
-    second: sticky-note_0
+      213: -2949382301963363751
+    second: Play-Pause--Streamline-Outlined-Material-Symbols_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sticky-note_0
+      name: Play-Pause--Streamline-Outlined-Material-Symbols_0
       rect:
         serializedVersion: 2
-        x: 143
-        y: 128
-        width: 456
-        height: 458
+        x: 4
+        y: 7
+        width: 16
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c0f16b498169afa80800000000000000
-      internalID: -8432262319979487476
+      spriteID: 95a56a04c60b117d0800000000000000
+      internalID: -2949382301963363751
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      sticky-note_0: -8432262319979487476
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

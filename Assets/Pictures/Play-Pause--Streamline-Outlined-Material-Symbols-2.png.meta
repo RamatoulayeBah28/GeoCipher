@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: b337c05eafe3a4d2da707e27694abc1a
+guid: e2717d80b73114855ba7e8757ec909ab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8432262319979487476
-    second: sticky-note_0
+      213: -5260906059142142268
+    second: Play-Pause--Streamline-Outlined-Material-Symbols-2_0
+  - first:
+      213: -2035140649414593625
+    second: Play-Pause--Streamline-Outlined-Material-Symbols-2_1
+  - first:
+      213: 4388653457018495985
+    second: Play-Pause--Streamline-Outlined-Material-Symbols-2_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +102,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sticky-note_0
+      name: Play-Pause--Streamline-Outlined-Material-Symbols-2_0
       rect:
         serializedVersion: 2
-        x: 143
-        y: 128
-        width: 456
-        height: 458
+        x: 14
+        y: 25
+        width: 20
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c0f16b498169afa80800000000000000
-      internalID: -8432262319979487476
+      spriteID: 4c6e12c00d18df6b0800000000000000
+      internalID: -5260906059142142268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play-Pause--Streamline-Outlined-Material-Symbols-2_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 24
+        width: 7
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a37fabac5ab1c3e0800000000000000
+      internalID: -2035140649414593625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play-Pause--Streamline-Outlined-Material-Symbols-2_2
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 24
+        width: 8
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f3a0eb2111a7ec30800000000000000
+      internalID: 4388653457018495985
       vertices: []
       indices: 
       edges: []
@@ -147,8 +184,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      sticky-note_0: -8432262319979487476
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
