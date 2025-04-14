@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Play-Store-Logo--Streamline-Plump_0: -6000896780578419146
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

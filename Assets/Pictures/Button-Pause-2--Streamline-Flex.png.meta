@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Button-Pause-2--Streamline-Flex_0: 7107804129319867406
+      Button-Pause-2--Streamline-Flex_1: -1751219529979770735
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Play-Pause--Streamline-Outlined-Material-Symbols_0: -2949382301963363751
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

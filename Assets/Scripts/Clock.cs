@@ -114,7 +114,7 @@ public class Clock : MonoBehaviour
             else{
                 Debug.Log("Wrong Time");
                 ClueManager.instance.isPaintingAttemptWrong = true;
-                SceneController.instance.ChangeScene("RoomScene");
+                // SceneController.instance.ChangeScene("RoomScene");
             }
         }
     }
