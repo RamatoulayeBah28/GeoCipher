@@ -46,4 +46,9 @@ public class Timer : MonoBehaviour
     {
         timerText = GameObject.Find("Timer")?.GetComponent<TextMeshProUGUI>();
     }
+
+    public float GetRemainingTime()
+        {
+            return remainingTime;
+        }
 }

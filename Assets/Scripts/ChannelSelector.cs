@@ -19,6 +19,7 @@ public class ChannelSelector : MonoBehaviour
     {
         channelText.text = selectChannel;
         if(selectChannel == "17"){
+            ClueManager.instance.isTVFound = true;
             SceneController.instance.ChangeScene("Scenes/TVChannelScene"); 
         } 
         if(selectChannel.Length >= 2){

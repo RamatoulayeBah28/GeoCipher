@@ -3,6 +3,9 @@ using UnityEngine;
 public class ClueManager : MonoBehaviour
 {
     public static ClueManager instance;
+
+    public bool isBookUnlocked = false;
+    public bool isTVFound = false;
     public bool isPaintingUnlocked = false;
     public bool isDrawerUnlocked = false;
 

@@ -116,6 +116,7 @@ public class StickyNotePuzzle : MonoBehaviour
         if (userInput == correctCode)
         {
             staticAudio.Play(); // tv static sound so the user gets a hint that the tv channel is next
+            ClueManager.instance.isBookUnlocked = true;
             yield return new WaitForSeconds(2f);
             staticAudio.Stop();
             StickyNoteSolved = true;
