@@ -10,11 +10,11 @@ public class UserGuessManager : MonoBehaviour
 
     public void ValidateInput() 
     {
-        string input = inputField.text;
+        string input = inputField.text.Trim().ToLower();
         // Fix count
         int count = 0;
 
-        if (input != "Australia") {
+        if (input != "australia") {
             count++;
             resultText.color = Color.white;
             if (count > 2) {
