@@ -113,6 +113,7 @@ public class Clock : MonoBehaviour
             }
             else{
                 Debug.Log("Wrong Time");
+                AudioManager.instance.PlayNegative();
                 ClueManager.instance.isPaintingAttemptWrong = true;
                 // SceneController.instance.ChangeScene("RoomScene");
             }
