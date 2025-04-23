@@ -617,8 +617,8 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 29
-    m_FontStyle: 1
+    m_FontSize: 23
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
@@ -628,9 +628,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '.
-
-'
+  m_Text: 7
 --- !u!222 &341349166
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -673,8 +671,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 167.24194, y: 42.39502}
-  m_SizeDelta: {x: 297.0038, y: 538.2713}
+  m_AnchoredPosition: {x: 169.3329, y: 18.9291}
+  m_SizeDelta: {x: 305.2359, y: 585.1919}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &387505856
 MonoBehaviour:
@@ -720,7 +718,11 @@ MonoBehaviour:
 
 
     He said,
-    "Nulla bores me to tears, leave him at home"
+    "Nulla bores me to tears, leave him at home. He''ll watch some TV at 7 pm".
+
+
+    We
+    hung up and I left the house.
 
 
 '
@@ -750,7 +752,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &885773437
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1034,19 +1036,19 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Sitting at home last Sunday morning, me mate Boomer rang
+  m_Text: 'Sitting at home last Sunday morning, me mate Boomer rang.
 
 
     Said he
     was having a few people around for a barbie, said he might cook a burro or two
+    at 1 pm.
 
 
-    I
-    said, "Sounds great, will Walla be there?"
+    I said, "Sounds great, will Walla be there?"
 
 
-    He said, "Yeah and Vejja might
-    come too"'
+    He said, "Yeah
+    and Vejja might come too".'
 --- !u!222 &998900044
 CanvasRenderer:
   m_ObjectHideFlags: 0
