@@ -18,12 +18,13 @@ public class ChannelSelector : MonoBehaviour
    
     void Update()
     {
-         if (channelText != null)
-    {
-        channelText.text = string.IsNullOrEmpty(selectChannel) ? "Enter Channel" : selectChannel;
-    }
+        channelText.text = selectChannel;
+    //      if (channelText != null)
+    // {
+    //     channelText.text = string.IsNullOrEmpty(selectChannel) ? "Enter Channel:" : selectChannel;
+    // }
        
-        if(selectChannel.Length == 2){
+         if(selectChannel.Length == 2){
           StartCoroutine(HandleCodeEntry());
         } 
         
@@ -34,7 +35,11 @@ public class ChannelSelector : MonoBehaviour
      if(selectChannel == "17"){
             ClueManager.instance.isTVFound = true;
             SceneController.instance.ChangeScene("Scenes/TVChannelScene"); 
-        } 
+        } else {
+            if(selectChannel.Length >= 2){
+                selectChannel = "";
+            }
+        }
 }
    
 
