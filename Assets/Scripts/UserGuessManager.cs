@@ -8,6 +8,9 @@ public class UserGuessManager : MonoBehaviour
     [SerializeField] InputField inputField;
     [SerializeField] Text resultText;
 
+    public GameObject winCanvas;
+    public GameObject inputCanvas;
+
     public void ValidateInput() 
     {
         string input = inputField.text.Trim().ToLower();
@@ -27,8 +30,8 @@ public class UserGuessManager : MonoBehaviour
         }
         else
         {
-            resultText.text = "Congrats, you guessed the right country!";
-            resultText.color = Color.green;
+            inputCanvas.SetActive(false);
+            winCanvas.SetActive(true);
         }
     }
 
