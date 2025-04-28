@@ -3,12 +3,14 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Diagnostics;
 using System.Collections;
+using System;
 
 public class ChannelSelector : MonoBehaviour
 {
      [SerializeField]
     Text channelText;
     string selectChannel = "";
+    private bool isUnlocked = false;
 
   
     void Start()
@@ -19,7 +21,7 @@ public class ChannelSelector : MonoBehaviour
     void Update()
     {
         channelText.text = selectChannel;    
-         if(selectChannel.Length == 2){
+         if(!isUnlocked && selectChannel.Length == 2){
           StartCoroutine(HandleCodeEntry());
         } 
         
@@ -30,6 +32,7 @@ public class ChannelSelector : MonoBehaviour
      if(selectChannel == "17"){
             ClueManager.instance.isTVFound = true;
             SceneController.instance.ChangeScene("Scenes/TVChannelScene"); 
+            isUnlocked = true;
         } else {
             if(selectChannel.Length >= 2){
                  yield return new WaitForSeconds(0.2f);
