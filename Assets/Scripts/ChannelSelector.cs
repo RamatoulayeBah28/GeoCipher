@@ -35,10 +35,9 @@ public class ChannelSelector : MonoBehaviour
             SceneController.instance.ChangeScene("Scenes/TVChannelScene"); 
           
         } else {
-            if(selectChannel.Length >= 2){
                  yield return new WaitForSeconds(0.2f);
                  selectChannel = "";
-            }
+            
         }
 }
    

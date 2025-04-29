@@ -43,6 +43,11 @@ public class SceneChanger : MonoBehaviour
                     sceneToLoad = "OpenDrawerScene";
                 }
             }
+            if(string.Equals(objectName, "TV")){
+                if(ClueManager.instance.isTVFound){
+                    sceneToLoad = "TVChannelScene";
+                }
+            }
 
             
             if (SceneController.instance != null)
