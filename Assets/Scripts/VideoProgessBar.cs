@@ -19,21 +19,25 @@ public class VideoProgessBar : MonoBehaviour, IDragHandler, IPointerDownHandler
     // Update is called once per frame
     void Update()
     {
+        // Progress bar as video plays
         if (videoPlayer.frameCount > 0){
             progress.fillAmount = (float)videoPlayer.frame/(float)videoPlayer.frameCount;
         }
     }
     public void OnDrag(PointerEventData eventData)
     {
+        // Skips to where bar is dragged to 
         TrySkip(eventData);
     }
     public void OnPointerDown(PointerEventData eventData)
     {
+        //Skips to where mouse is clicked on bar
         TrySkip(eventData);
     }
 
     private void TrySkip(PointerEventData eventData)
     {
+        //Skips video based on progress bar 
        Vector2 localPoint;
        if(RectTransformUtility.ScreenPointToLocalPointInRectangle(
         progress.rectTransform,eventData.position, null, out localPoint)){

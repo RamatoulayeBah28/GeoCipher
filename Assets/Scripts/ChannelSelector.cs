@@ -30,13 +30,14 @@ public class ChannelSelector : MonoBehaviour
 {
     yield return new WaitForSeconds(0.1f);
      if(selectChannel == "17"){
+            isUnlocked = true;
             ClueManager.instance.isTVFound = true;
             SceneController.instance.ChangeScene("Scenes/TVChannelScene"); 
-            isUnlocked = true;
+          
         } else {
             if(selectChannel.Length >= 2){
                  yield return new WaitForSeconds(0.2f);
-                selectChannel = "";
+                 selectChannel = "";
             }
         }
 }
