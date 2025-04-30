@@ -28,13 +28,14 @@ public class ChannelSelector : MonoBehaviour
     }
      IEnumerator HandleCodeEntry()
 {
-    yield return new WaitForSeconds(0.1f);
+    
      if(selectChannel == "17"){
             isUnlocked = true;
             ClueManager.instance.isTVFound = true;
             SceneController.instance.ChangeScene("Scenes/TVChannelScene"); 
           
         } else {
+            yield return new WaitForSeconds(0.1f);
                  yield return new WaitForSeconds(0.2f);
                  selectChannel = "";
             

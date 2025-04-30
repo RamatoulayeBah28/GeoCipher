@@ -33,7 +33,6 @@ public class CodePanel : MonoBehaviour
     IEnumerator HandleCodeEntry()
 {
     //  lets the last digit appear
-    yield return new WaitForSeconds(0.1f);
 
     if (codeTextValue == correctCode)
     {
@@ -45,7 +44,8 @@ public class CodePanel : MonoBehaviour
         SceneController.instance.ChangeScene("Scenes/OpenDrawerScene");
     }
     else
-    {
+    {   
+        yield return new WaitForSeconds(0.1f);
         AudioManager.instance.PlayNegative();
         codeText.color = Color.red;
         codeText.text = "INCORRECT";
