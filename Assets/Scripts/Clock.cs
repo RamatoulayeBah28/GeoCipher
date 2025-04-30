@@ -91,8 +91,8 @@ public class Clock : MonoBehaviour
             float minAngle = min.eulerAngles.z;
             float hrAngle = hr.eulerAngles.z;
         
-            int mins = Mathf.CeilToInt(minAngle / 360f * 60f);
-            int hrs = Mathf.CeilToInt(hrAngle / 360f * 12f);
+            int mins = Mathf.RoundToInt(minAngle / 360f * 60f);
+            int hrs = Mathf.RoundToInt(hrAngle / 360f * 12f);
         
             if (hrs == 0){
                 hrs = 12;
