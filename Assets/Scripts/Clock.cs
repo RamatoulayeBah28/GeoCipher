@@ -12,8 +12,8 @@ public class Clock : MonoBehaviour
     private Vector3 screenPos;
     private float angleOffset;
 
-    public int hour = 10;
-    public int minute = 10;
+    public int correctHour;
+    public int correctMinute;
 
     private bool isUnlocked = false;
 
@@ -102,9 +102,10 @@ public class Clock : MonoBehaviour
 
             mins = (105 - mins) % 60;
         
-            Debug.Log("Hour:" + hrs + ", " + "Minute:" + mins);
+            Debug.Log("Hour:" + hrs + ", " + " Minute:" + mins);
+            Debug.Log("Correct hour:" + correctHour + ", " + " Correct minute:" + correctMinute);
 
-            if(Mathf.Abs(minute - mins) < 2 && hour == hrs){
+            if(Mathf.Abs(correctMinute - mins) < 2 && correctHour == hrs){
                 Debug.Log("Corret Time. Open the Picture");
                 AudioManager.instance.PlayUnlocked();
                 isUnlocked = true;
