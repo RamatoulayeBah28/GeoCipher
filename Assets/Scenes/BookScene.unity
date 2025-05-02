@@ -363,7 +363,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: VII
+  m_Text: seven
 --- !u!222 &341349166
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1045,7 +1045,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -180, y: -285}
+  m_AnchoredPosition: {x: -183, y: -280}
   m_SizeDelta: {x: 156.968, y: 64.2727}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2119884266
@@ -1081,7 +1081,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'VI
+  m_Text: 'six
 
 
 '
