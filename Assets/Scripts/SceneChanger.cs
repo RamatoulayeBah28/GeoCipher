@@ -31,12 +31,6 @@ public class SceneChanger : MonoBehaviour
             // Scene names HAVE TO FOLLOW a naming convention like "ObjectNameScene"
             string sceneToLoad = objectName + "Scene";
             AudioManager.instance.PlayClue();
-
-            if(string.Equals(objectName, "Painting")){
-                if(ClueManager.instance.isPaintingUnlocked){
-                    sceneToLoad = "OpenPaintingScene";
-                }
-            }
             
             if(string.Equals(objectName, objectName)){
                 if(ClueManager.instance.IsUnlocked(objectName)){
