@@ -37,15 +37,10 @@ public class SceneChanger : MonoBehaviour
                     sceneToLoad = "OpenPaintingScene";
                 }
             }
-
-            if(string.Equals(objectName, "Drawer")){
-                if(ClueManager.instance.isDrawerUnlocked){
-                    sceneToLoad = "OpenDrawerScene";
-                }
-            }
-            if(string.Equals(objectName, "TV")){
-                if(ClueManager.instance.isTVFound){
-                    sceneToLoad = "TVChannelScene";
+            
+            if(string.Equals(objectName, objectName)){
+                if(ClueManager.instance.IsUnlocked(objectName)){
+                    sceneToLoad = objectName + "OpenScene";
                 }
             }
 

@@ -15,7 +15,7 @@ public class PaintingController : MonoBehaviour
             ClueManager.instance.isPaintingAttemptWrong = false;
         }
 
-        if(ClueManager.instance.isPaintingUnlocked && !hasShaken)
+        if(ClueManager.instance.IsUnlocked("Painting") && !hasShaken)
         {
             SlidePainting();
             hasShaken = true;

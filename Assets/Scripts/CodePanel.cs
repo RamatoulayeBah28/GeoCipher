@@ -40,8 +40,8 @@ public class CodePanel : MonoBehaviour
         codeText.color = Color.green;
         AudioManager.instance.PlayUnlocked();
         isUnlocked = true;
-        ClueManager.instance.isDrawerUnlocked = true;
-        SceneController.instance.ChangeScene("Scenes/OpenDrawerScene");
+        ClueManager.instance.UnlockObject("Drawer");
+        SceneController.instance.ChangeScene("Scenes/DrawerOpenScene");
     }
     else
     {   

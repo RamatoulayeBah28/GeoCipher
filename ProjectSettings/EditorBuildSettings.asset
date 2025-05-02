@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/BookScene.unity
     guid: 8d618fde11c4b49ae9742624b1643de3
   - enabled: 1
-    path: Assets/Scenes/OpenPaintingScene.unity
+    path: Assets/Scenes/PaintingOpenScene.unity
     guid: d4d9897b4ef9a47e0ba8ea2c708dc87e
   - enabled: 1
     path: Assets/Scenes/ClockScene.unity
@@ -27,10 +27,10 @@ EditorBuildSettings:
     path: Assets/Scenes/DrawerScene.unity
     guid: a808b4b31717f4c45b999fdb43854450
   - enabled: 1
-    path: Assets/Scenes/OpenDrawerScene.unity
+    path: Assets/Scenes/DrawerOpenScene.unity
     guid: b7339f846f2934c32ae49bbfd89dc461
   - enabled: 1
-    path: Assets/Scenes/TVChannelScene.unity
+    path: Assets/Scenes/TVOpenScene.unity
     guid: 5044e059fad2042f99fa33b45fd5e71b
   - enabled: 1
     path: Assets/Scenes/PaintingScene.unity

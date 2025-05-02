@@ -109,14 +109,13 @@ public class Clock : MonoBehaviour
                 Debug.Log("Corret Time. Open the Picture");
                 AudioManager.instance.PlayUnlocked();
                 isUnlocked = true;
-                ClueManager.instance.isPaintingUnlocked = true;
+                ClueManager.instance.UnlockObject("Painting");
                 SceneController.instance.ChangeScene("RoomScene");
             }
             else{
                 Debug.Log("Wrong Time");
                 AudioManager.instance.PlayNegative();
                 ClueManager.instance.isPaintingAttemptWrong = true;
-                // SceneController.instance.ChangeScene("RoomScene");
             }
         }
     }

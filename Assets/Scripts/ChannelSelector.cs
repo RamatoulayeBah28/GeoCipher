@@ -31,8 +31,8 @@ public class ChannelSelector : MonoBehaviour
     
      if(selectChannel == "17"){
             isUnlocked = true;
-            ClueManager.instance.isTVFound = true;
-            SceneController.instance.ChangeScene("Scenes/TVChannelScene"); 
+            ClueManager.instance.UnlockObject("TV");
+            SceneController.instance.ChangeScene("Scenes/TVOpenScene"); 
           
         } else {
             yield return new WaitForSeconds(0.1f);
