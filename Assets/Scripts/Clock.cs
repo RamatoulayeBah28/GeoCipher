@@ -22,6 +22,8 @@ public class Clock : MonoBehaviour
 
     private bool testMinDrag = false;
     private bool hasDraggedMin = false;
+
+    public static int count = 0;
     private void Start(){
         min = minuteHand.transform;
         minCol = minuteHand.GetComponent<Collider2D>();
@@ -111,11 +113,16 @@ public class Clock : MonoBehaviour
                 isUnlocked = true;
                 ClueManager.instance.UnlockObject("Painting");
                 SceneController.instance.ChangeScene("RoomScene");
+                if(count == 0)
+                {
+                    count++;
+                }
             }
             else{
                 Debug.Log("Wrong Time");
                 AudioManager.instance.PlayNegative();
                 ClueManager.instance.isPaintingAttemptWrong = true;
+
             }
         }
     }
