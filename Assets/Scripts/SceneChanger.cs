@@ -1,20 +1,26 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/*
+Handles the transition between clue items and their respective scenes.
+
+By Ramatoulaye Bah, edited by Batsambuu Batbold and Ahmed Abdelhai
+*/
+
 public class SceneChanger : MonoBehaviour
 {
-    private Camera _mainCamera;
+    private Camera mainCamera;
 
     private void Awake()
     {
-        _mainCamera = Camera.main;
+        mainCamera = Camera.main;
     }
 
     public void OnClick(InputAction.CallbackContext context)
     {
         if (!context.started) return;
 
-        var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
+        var rayHit = Physics2D.GetRayIntersection(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
 
         if (!rayHit.collider)
         {
@@ -23,22 +29,22 @@ public class SceneChanger : MonoBehaviour
             return;
         }
 
-        // Log the object info and change scene based on its name.
-        if(rayHit.collider.CompareTag("Clue")){
+        if (rayHit.collider.CompareTag("Clue"))
+        {
             string objectName = rayHit.collider.gameObject.name;
             Debug.Log($"Object Name: {objectName}");
-            
-            // Scene names HAVE TO FOLLOW a naming convention like "ObjectNameScene"
+
+            // Scene name format: "ObjectNameScene"
             string sceneToLoad = objectName + "Scene";
-            AudioManager.instance.PlayClue();
-            //Scene names HAVE TO FOLLOW a naming convention like "ObjectOpenScene
-            if(string.Equals(objectName, objectName)){
-                if(ClueManager.instance.IsUnlocked(objectName)){
-                    sceneToLoad = objectName + "OpenScene";
-                }
+
+            // If object is unlocked: "ObjectNameOpenScene"
+            if (ClueManager.instance.IsUnlocked(objectName))
+            {
+                sceneToLoad = objectName + "OpenScene";
             }
 
-            
+            AudioManager.instance.PlayClue();
+
             if (SceneController.instance != null)
             {
                 SceneController.instance.ChangeScene(sceneToLoad);
@@ -46,8 +52,7 @@ public class SceneChanger : MonoBehaviour
             else
             {
                 Debug.LogError("SceneController instance is null. Make sure it's added to the scene.");
-            }    
-            
+            }
         }
     }
 }

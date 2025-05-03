@@ -2,20 +2,24 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+/*
+Handles the countdown timer and game win/lose conditions.
+
+By Batsambuu Batbold, Ramatoulaye Bah
+*/
 
 public class Timer : MonoBehaviour
 {
     public static Timer instance;
+
     public float totalTime = 600f;
-    private float remainingTime;
     public TextMeshProUGUI timerText;
-
     public GameObject gameOverBG;
-
     public GameObject room;
-    private bool isGameOver = false;
-
     public GameObject playButton;
+
+    private float remainingTime;
+    private bool isGameOver = false;
 
     void Awake()
     {
@@ -32,25 +36,23 @@ public class Timer : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    void Start()
+    private void Start()
     {
         remainingTime = totalTime;
-        gameOverBG.SetActive(false);
+        if (gameOverBG != null)
+        {
+            gameOverBG.SetActive(false);
+        }
     }
 
-    void Update()
+    private void Update()
     {
-        if (isGameOver || timerText == null)
-        {
-            return;
-        }
+        if (isGameOver || timerText == null) return;
 
         if (remainingTime > 0f)
         {
-
             remainingTime -= Time.deltaTime;
             UpdateTimerText();
-
         }
         else
         {
@@ -58,7 +60,7 @@ public class Timer : MonoBehaviour
         }
     }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         timerText = GameObject.Find("Timer")?.GetComponent<TextMeshProUGUI>();
         UpdateTimerText();
@@ -69,14 +71,14 @@ public class Timer : MonoBehaviour
         return remainingTime;
     }
 
-    void UpdateTimerText()
+    private void UpdateTimerText()
     {
         int minutes = Mathf.FloorToInt(remainingTime / 60);
         int seconds = Mathf.FloorToInt(remainingTime % 60);
         timerText.text = $"Time: {minutes:00}:{seconds:00}";
     }
 
-    void EndGame()
+    private void EndGame()
     {
         remainingTime = 0f;
         UpdateTimerText();
@@ -94,7 +96,6 @@ public class Timer : MonoBehaviour
         {
             gameOverBG.SetActive(true);
         }
-
     }
 
     public void PlayAgain()
@@ -116,7 +117,6 @@ public class Timer : MonoBehaviour
         }
 
         UpdateTimerText();
-
     }
 
     public void ResetTimer()

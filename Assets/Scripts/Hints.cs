@@ -3,13 +3,20 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
+/*
+Handles the logic and order of hints to
+provide appropriate hints based on game progress.
+
+By Batsambuu Batbold
+*/
+
 public class Hints : MonoBehaviour
 {
     public TextMeshProUGUI hintText;
+    public float waitTime = 60f;
 
-    public float waitingTime = 60f;
     private int currentHintIndex = 0;
-    private int hintsUsed = 0;
+    private int usedCount = 0;
 
     private List<string> hints = new List<string>()
     {
@@ -39,69 +46,69 @@ public class Hints : MonoBehaviour
     public void ShowNextHint()
     {
         float timeElapsed = Timer.instance.totalTime - Timer.instance.GetRemainingTime();
-        int allowedHints = Mathf.FloorToInt(timeElapsed / waitingTime);
+        int allowedHints = Mathf.FloorToInt(timeElapsed / waitTime);
 
         if (currentHintIndex < hints.Count)
         {
-            if(hintsUsed < allowedHints){
-                if(ClueManager.instance.isBookUnlocked && currentHintIndex < 5){
+            if (usedCount < allowedHints)
+            {
+                // Adjust hint index based on current game progress
+                if (ClueManager.instance.isBookUnlocked && currentHintIndex < 5)
                     currentHintIndex = 5;
-                } else {
-                    if(!ClueManager.instance.isBookUnlocked && currentHintIndex > 4){
-                        currentHintIndex = 4;
-                        hintsUsed--;
-                    }
+                else if (!ClueManager.instance.isBookUnlocked && currentHintIndex > 4)
+                {
+                    currentHintIndex = 4;
+                    usedCount--;
                 }
 
-                if(ClueManager.instance.isTVFound && currentHintIndex < 7){
+                if (ClueManager.instance.isTVFound && currentHintIndex < 7)
                     currentHintIndex = 7;
-                } else {
-                    if(!ClueManager.instance.isTVFound && currentHintIndex > 6){
-                        currentHintIndex = 6;
-                        hintsUsed--;
-                    }
+                else if (!ClueManager.instance.isTVFound && currentHintIndex > 6)
+                {
+                    currentHintIndex = 6;
+                    usedCount--;
                 }
 
-                if(ClueManager.instance.isPaintingUnlocked && currentHintIndex < 10){
+                if (ClueManager.instance.isPaintingUnlocked && currentHintIndex < 10)
                     currentHintIndex = 10;
-                } else {
-                    if(!ClueManager.instance.isPaintingUnlocked && currentHintIndex > 9){
-                        currentHintIndex = 9;
-                        hintsUsed--;
-                    }
+                else if (!ClueManager.instance.isPaintingUnlocked && currentHintIndex > 9)
+                {
+                    currentHintIndex = 9;
+                    usedCount--;
                 }
 
-                if(ClueManager.instance.isDrawerUnlocked && currentHintIndex < 11){
+                if (ClueManager.instance.isDrawerUnlocked && currentHintIndex < 11)
                     currentHintIndex = 11;
-                } else {
-                    if(!ClueManager.instance.isDrawerUnlocked && currentHintIndex > 10){
-                        currentHintIndex = 10;
-                        hintsUsed--;
-                    }
+                else if (!ClueManager.instance.isDrawerUnlocked && currentHintIndex > 10)
+                {
+                    currentHintIndex = 10;
+                    usedCount--;
                 }
 
-                
                 currentHintIndex++;
-                if(currentHintIndex == hints.Count){
+                if (currentHintIndex == hints.Count)
+                {
                     hintText.text = "Where are you?";
                     currentHintIndex--;
-                }else{
-                    hintText.text = hints[currentHintIndex];
-                    hintsUsed++;
                 }
-                
+                else
+                {
+                    hintText.text = hints[currentHintIndex];
+                    usedCount++;
+                }
             }
             else
             {
                 hintText.text = "Wait a bit!";
-                StartCoroutine(ResetHint(hints[currentHintIndex], 2f));
+                StartCoroutine(RestoreHintText(hints[currentHintIndex], 2f));
             }
         }
         else
         {
             hintText.text = "Where are you?";
         }
-        Debug.Log(currentHintIndex + " " + hintsUsed + " " + allowedHints);
+
+        Debug.Log(currentHintIndex + " " + usedCount + " " + allowedHints);
     }
 
     public void SetHintIndex(int index)
@@ -109,7 +116,7 @@ public class Hints : MonoBehaviour
         currentHintIndex = index;
     }
 
-    private IEnumerator ResetHint(string text, float delay)
+    private IEnumerator RestoreHintText(string text, float delay)
     {
         yield return new WaitForSeconds(delay);
         hintText.text = text;

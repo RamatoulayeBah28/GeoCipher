@@ -1,29 +1,37 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+Handles cursor changes when hovering over clickable objects.
+The cursor image should be assigned in the Unity editor.
+
+By Batsambuu Batbold
+*/
+
 public class CursorChanger : MonoBehaviour
 {
     public Texture2D hoverCursor;
-    private Vector2 cursorHotspot;
-    private Camera _mainCamera;
+
+    private Vector2 hotspot;
+    private Camera mainCamera;
 
     private void Awake()
     {
-        _mainCamera = Camera.main;
+        mainCamera = Camera.main;
+
         if (hoverCursor != null)
         {
-            cursorHotspot = new Vector2(hoverCursor.width * 5/12, 0);
+            hotspot = new Vector2(hoverCursor.width * 5 / 12, 0);
         }
     }
 
-
-    void Update()
+    private void Update()
     {
-        var rayHit = Physics2D.GetRayIntersection(_mainCamera.ScreenPointToRay(Input.mousePosition));
+        var hit = Physics2D.GetRayIntersection(mainCamera.ScreenPointToRay(Input.mousePosition));
 
-        if (rayHit.collider != null)
+        if (hit.collider != null)
         {
-            Cursor.SetCursor(hoverCursor, cursorHotspot, CursorMode.Auto);
+            Cursor.SetCursor(hoverCursor, hotspot, CursorMode.Auto);
         }
         else
         {

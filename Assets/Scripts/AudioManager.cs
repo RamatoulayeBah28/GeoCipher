@@ -1,11 +1,21 @@
 using UnityEngine;
 
+/*
+Handles main audio feedback for the player,
+such as playing sounds for clues, errors, or successful interactions.
+Assign all AudioSource fields in the Unity editor.
+
+By Batsambuu Batbold
+*/
+
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-    public AudioSource clue; 
+
+    public AudioSource clue;
     public AudioSource negative;
     public AudioSource unlocked;
+
     private void Awake()
     {
         if (instance == null)
@@ -19,39 +29,19 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayClue()
-    {
-        if (clue != null)
-        {
-            clue.Play();
-        }
-        else
-        {
-            Debug.LogError("Clue AudioSource is not assigned.");
-        }
-    }
+    public void PlayClue() => PlayAudio(clue, "Clue");
+    public void PlayNegative() => PlayAudio(negative, "Negative");
+    public void PlayUnlocked() => PlayAudio(unlocked, "Unlocked");
 
-    public void PlayNegative()
+    private void PlayAudio(AudioSource source, string label)
     {
-        if (negative != null)
+        if (source != null)
         {
-            negative.Play();
+            source.Play();
         }
         else
         {
-            Debug.LogError("Negative AudioSource is not assigned.");
-        }
-    }
-
-    public void PlayUnlocked()
-    {
-        if (unlocked != null)
-        {
-            unlocked.Play();
-        }
-        else
-        {
-            Debug.LogError("Unlocked AudioSource is not assigned.");
+            Debug.LogError($"{label} AudioSource is not assigned.");
         }
     }
 }
