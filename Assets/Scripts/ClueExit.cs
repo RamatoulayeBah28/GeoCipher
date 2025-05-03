@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class ClueExit : MonoBehaviour
 {
-
-    // If the collider is clicked, then:
     private void OnMouseDown()
     {
         Debug.Log("Exit button clicked");

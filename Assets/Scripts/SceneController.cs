@@ -7,9 +7,7 @@ public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
     private SceneFade _sceneFade;
-    // public void InteractiveClues() {
-    //     SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
-    // }
+
     private void Awake()
     {
         

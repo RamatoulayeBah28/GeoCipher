@@ -11,10 +11,12 @@ public class MapClickHandler : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (userGuessCanvas != null) {
+        if (userGuessCanvas != null)
+        {
             userGuessCanvas.SetActive(true);
         }
-        else {
+        else
+        {
             Debug.Log("Error setting the canvas active");
         }
     }

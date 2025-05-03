@@ -9,6 +9,9 @@ public class UserGuessManager : MonoBehaviour
     public GameObject winCanvas;
     public GameObject inputCanvas;
 
+    public GameObject exitButton;
+
+    // make sure it stops the time
     public void ValidateInput()
     {
         string input = inputField.text.Trim().ToLower();
@@ -23,8 +26,22 @@ public class UserGuessManager : MonoBehaviour
         else
         {
             inputCanvas.SetActive(false);
+            exitButton.SetActive(false);
             winCanvas.SetActive(true);
+
         }
+    }
+
+    // destoy time on load
+    public void ResetGame()
+    {
+        SceneController.instance.ChangeScene("Scenes/WelcomeScene");
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit game");
+        Application.Quit();
     }
 
 }
