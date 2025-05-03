@@ -421,7 +421,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hint
+  m_text: 'HINT
 
     0 available'
   m_isRightToLeft: 0
@@ -450,8 +450,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1362,7 +1362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 138.5, y: 368}
+  m_AnchoredPosition: {x: 137, y: 352}
   m_SizeDelta: {x: 245.309, y: 79.603}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &888116773
@@ -1503,7 +1503,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hintText: {fileID: 855587016}
   hintButtonText: {fileID: 366760065}
-  waitTime: 10
+  waitTime: 60
+  hintBackground: {fileID: 1736647549}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 0.21568629, g: 0.3921569, b: 0.4784314, a: 1}
 --- !u!1 &1028939493
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,8 +1800,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 115.2, y: -93}
-  m_SizeDelta: {x: 66.9, y: 30}
+  m_AnchoredPosition: {x: 113.63855, y: -105.100006}
+  m_SizeDelta: {x: 100.4612, y: 42.099}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1736647548
 MonoBehaviour:
