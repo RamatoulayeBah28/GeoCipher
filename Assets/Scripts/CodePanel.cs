@@ -21,7 +21,7 @@ public class CodePanel : MonoBehaviour
     {
        if (codeText != null)
     {
-        codeText.text = string.IsNullOrEmpty(codeTextValue) ? "Enter Code" : codeTextValue;
+        codeText.text = string.IsNullOrEmpty(codeTextValue) ? "_ _ _ _" : codeTextValue;
     }
 
     if (!isUnlocked && codeTextValue.Length == 4)
@@ -63,7 +63,7 @@ public class CodePanel : MonoBehaviour
     public void PressClear()
     {
         codeTextValue = "";
-        codeText.text = "Enter Code";
+        codeText.text = "_ _ _ _";
     }
 
     public void PressDelete()
