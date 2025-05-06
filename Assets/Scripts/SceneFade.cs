@@ -11,7 +11,7 @@ By Batsambuu Batbold with the help of https://www.youtube.com/watch?v=vkOhefMbrF
 
 public class SceneFade : MonoBehaviour
 {
-    public float duration = 0.5f;
+    private float duration;
     
     private Image fadeImage;
 
@@ -20,26 +20,26 @@ public class SceneFade : MonoBehaviour
         fadeImage = GetComponent<Image>();
     }
 
-    public IEnumerator FadeInCoroutine()
+    public IEnumerator FadeInCoroutine(float duration)
     {
         Color startColor = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 1);
         Color targetColor = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 0);
 
-        yield return FadeCoroutine(startColor, targetColor);
+        yield return FadeCoroutine(startColor, targetColor, duration);
 
         gameObject.SetActive(false);
     }
 
-    public IEnumerator FadeOutCoroutine()
+    public IEnumerator FadeOutCoroutine(float duration)
     {
         Color startColor = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 0);
         Color targetColor = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 1);
 
         gameObject.SetActive(true);
-        yield return FadeCoroutine(startColor, targetColor);
+        yield return FadeCoroutine(startColor, targetColor, duration);
     }
 
-    private IEnumerator FadeCoroutine(Color startColor, Color targetColor)
+    private IEnumerator FadeCoroutine(Color startColor, Color targetColor, float duration)
     {
         float elapsedTime = 0f;
         float progress = 0f;

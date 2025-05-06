@@ -31,7 +31,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Fade
   - 
   - 
   - 
@@ -61,8 +61,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: New Layer 1
+  - name: Fade
     uniqueID: 1508175389
+    locked: 0
+  - name: 
+    uniqueID: 4138265573
     locked: 0
   m_RenderingLayers:
   - Default

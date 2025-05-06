@@ -31,7 +31,7 @@ public class SceneController : MonoBehaviour
 
     private IEnumerator Start()
     {
-        yield return sceneFade.FadeInCoroutine();
+        yield return sceneFade.FadeInCoroutine(0.3f);
     }
 
     public void ChangeScene(string sceneName)
@@ -41,8 +41,8 @@ public class SceneController : MonoBehaviour
 
     private IEnumerator LoadSceneCoroutine(string sceneName)
     {
-        yield return sceneFade.FadeOutCoroutine();
+        yield return sceneFade.FadeOutCoroutine(0.3f);
         yield return SceneManager.LoadSceneAsync(sceneName);
-        yield return sceneFade.FadeInCoroutine();
+        yield return sceneFade.FadeInCoroutine(0.3f);
     }
 }

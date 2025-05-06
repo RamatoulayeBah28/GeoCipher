@@ -2231,6 +2231,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 888116778}
     m_Modifications:
+    - target: {fileID: 2057911509727435515, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
+      propertyPath: m_text
+      value: "You ran out of time... \nThe correct country was Australia."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057911509727435515, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
+      propertyPath: m_margin.x
+      value: -272.00104
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057911509727435515, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
+      propertyPath: m_margin.z
+      value: -207.48792
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057911509727435515, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+    - target: {fileID: 2057911509727435515, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057911509727435515, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+    - target: {fileID: 2057911509727435515, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7131103775730486734, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2314,6 +2342,14 @@ PrefabInstance:
     - target: {fileID: 7245073251262756943, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944875114498756639, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944875114498756639, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8133241731321666645, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
       propertyPath: m_Name
