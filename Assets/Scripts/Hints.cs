@@ -82,33 +82,33 @@ public class Hints : MonoBehaviour
             if (usedCount < allowedHints)
             {
                 // Adjust hint index based on current game progress
-                if (ClueManager.instance.isBookUnlocked && currentHintIndex < 2)
+                if (ClueManager.instance.IsUnlocked("Book") && currentHintIndex < 2)
                     currentHintIndex = 2;
-                else if (!ClueManager.instance.isBookUnlocked && currentHintIndex > 1)
+                else if (!ClueManager.instance.IsUnlocked("Book") && currentHintIndex > 1)
                 {
                     currentHintIndex = 1;
                     usedCount--;
                 }
 
-                if (ClueManager.instance.isTVFound && currentHintIndex < 4)
+                if (ClueManager.instance.IsUnlocked("TV") && currentHintIndex < 4)
                     currentHintIndex = 4;
-                else if (!ClueManager.instance.isTVFound && currentHintIndex > 3)
+                else if (!ClueManager.instance.IsUnlocked("TV") && currentHintIndex > 3)
                 {
                     currentHintIndex = 3;
                     usedCount--;
                 }
 
-                if (ClueManager.instance.isPaintingUnlocked && currentHintIndex < 6)
+                if (ClueManager.instance.IsUnlocked("Painting") && currentHintIndex < 6)
                     currentHintIndex = 6;
-                else if (!ClueManager.instance.isPaintingUnlocked && currentHintIndex > 5)
+                else if (!ClueManager.instance.IsUnlocked("Painting") && currentHintIndex > 5)
                 {
                     currentHintIndex = 5;
                     usedCount--;
                 }
 
-                if (ClueManager.instance.isDrawerUnlocked && currentHintIndex < 7)
+                if (ClueManager.instance.IsUnlocked("Drawer") && currentHintIndex < 7)
                     currentHintIndex = 7;
-                else if (!ClueManager.instance.isDrawerUnlocked && currentHintIndex > 6)
+                else if (!ClueManager.instance.IsUnlocked("Drawer") && currentHintIndex > 6)
                 {
                     currentHintIndex = 6;
                     usedCount--;

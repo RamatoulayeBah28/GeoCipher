@@ -10,11 +10,6 @@ By Ahmed Abdelhai, Batsambuu Batbold
 public class ClueManager : MonoBehaviour
 {
     public static ClueManager instance;
-
-    public bool isBookUnlocked = false;
-    public bool isTVFound = false;
-    public bool isPaintingUnlocked = false;
-    public bool isDrawerUnlocked = false;
     public bool isPaintingAttemptWrong = false;
 
     public Dictionary<string, bool> unlockedObj = new Dictionary<string, bool>();
@@ -29,6 +24,7 @@ public class ClueManager : MonoBehaviour
             unlockedObj["TV"] = false;
             unlockedObj["Painting"] = false;
             unlockedObj["Drawer"] = false;
+            unlockedObj["Book"] = false;
         }
         else
         {
