@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 330722283}
   - component: {fileID: 330722282}
   m_Layer: 0
-  m_Name: Square
+  m_Name: PaintingOverlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1603,7 +1603,7 @@ GameObject:
   - component: {fileID: 1107159536}
   - component: {fileID: 1107159537}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: EmptyWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

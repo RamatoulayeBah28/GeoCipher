@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 752189771}
   - component: {fileID: 752189770}
   m_Layer: 0
-  m_Name: AutralianMOneyNoBg_0
+  m_Name: 10_Dollar_Bill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 1062032361}
   - component: {fileID: 1062032360}
   m_Layer: 0
-  m_Name: AutralianMOneyNoBg_0 (2)
+  m_Name: 5_Dollar_Bill_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 1334633964}
   - component: {fileID: 1334633963}
   m_Layer: 0
-  m_Name: AutralianMOneyNoBg_0 (1)
+  m_Name: 5_Dollar_Bill_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -794,7 +794,7 @@ GameObject:
   - component: {fileID: 1710910390}
   - component: {fileID: 1710910389}
   m_Layer: 0
-  m_Name: BackPainitng_0
+  m_Name: EmptyPaintingSpace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
