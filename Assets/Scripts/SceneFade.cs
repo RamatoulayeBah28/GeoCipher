@@ -3,43 +3,51 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+Handles the fade-in effect for transitions between scenes.
+
+By Batsambuu Batbold with the help of https://www.youtube.com/watch?v=vkOhefMbrFg
+*/
+
 public class SceneFade : MonoBehaviour
 {
-    public float duration = 0.5f;
-    private Image _sceneFadeImage;
+    private float duration;
+    
+    private Image fadeImage;
 
     private void Awake()
     {
-        _sceneFadeImage = GetComponent<Image>();
+        fadeImage = GetComponent<Image>();
     }
 
-    public IEnumerator FadeInCoroutine()
+    public IEnumerator FadeInCoroutine(float duration)
     {
-        Color startColor = new Color(_sceneFadeImage.color.r, _sceneFadeImage.color.g, _sceneFadeImage.color.b, 1);
-        Color targetColor = new Color(_sceneFadeImage.color.r, _sceneFadeImage.color.g, _sceneFadeImage.color.b, 0);
+        Color startColor = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 1);
+        Color targetColor = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 0);
 
-        yield return FadeCoroutine(startColor, targetColor);
+        yield return FadeCoroutine(startColor, targetColor, duration);
 
         gameObject.SetActive(false);
     }
 
-    public IEnumerator FadeOutCoroutine()
+    public IEnumerator FadeOutCoroutine(float duration)
     {
-        Color startColor = new Color(_sceneFadeImage.color.r, _sceneFadeImage.color.g, _sceneFadeImage.color.b, 0);
-        Color targetColor = new Color(_sceneFadeImage.color.r, _sceneFadeImage.color.g, _sceneFadeImage.color.b, 1);
+        Color startColor = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 0);
+        Color targetColor = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 1);
+
         gameObject.SetActive(true);
-        yield return FadeCoroutine(startColor, targetColor);
+        yield return FadeCoroutine(startColor, targetColor, duration);
     }
 
-    private IEnumerator FadeCoroutine(Color startColor, Color targetColor)
+    private IEnumerator FadeCoroutine(Color startColor, Color targetColor, float duration)
     {
-        float elapsedTime = 0;
-        float elapsedPercentage = 0;
+        float elapsedTime = 0f;
+        float progress = 0f;
 
-        while (elapsedPercentage < 1)
+        while (progress < 1f)
         {
-            elapsedPercentage = elapsedTime / duration;
-            _sceneFadeImage.color = Color.Lerp(startColor, targetColor, elapsedPercentage);
+            progress = elapsedTime / duration;
+            fadeImage.color = Color.Lerp(startColor, targetColor, progress);
 
             yield return null;
             elapsedTime += Time.deltaTime;

@@ -421,7 +421,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hint
+  m_text: 'HINT
+
+    0 available'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -448,8 +450,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1360,7 +1362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 138.5, y: 368}
+  m_AnchoredPosition: {x: 137, y: 352}
   m_SizeDelta: {x: 245.309, y: 79.603}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &888116773
@@ -1500,7 +1502,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintText: {fileID: 855587016}
-  waitingTime: 60
+  hintButtonText: {fileID: 366760065}
+  waitTime: 60
+  hintBackground: {fileID: 1736647549}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightColor: {r: 0.21568629, g: 0.3921569, b: 0.4784314, a: 1}
 --- !u!1 &1028939493
 GameObject:
   m_ObjectHideFlags: 0
@@ -1794,8 +1800,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 115.2, y: -93}
-  m_SizeDelta: {x: 66.9, y: 30}
+  m_AnchoredPosition: {x: 113.63855, y: -105.100006}
+  m_SizeDelta: {x: 100.4612, y: 42.099}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1736647548
 MonoBehaviour:
@@ -2225,6 +2231,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 888116778}
     m_Modifications:
+    - target: {fileID: 2057911509727435515, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
+      propertyPath: m_text
+      value: "You ran out of time... \nThe correct country was Australia."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057911509727435515, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
+      propertyPath: m_margin.x
+      value: -272.00104
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057911509727435515, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
+      propertyPath: m_margin.z
+      value: -207.48792
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057911509727435515, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+    - target: {fileID: 2057911509727435515, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057911509727435515, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+    - target: {fileID: 2057911509727435515, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7131103775730486734, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2308,6 +2342,14 @@ PrefabInstance:
     - target: {fileID: 7245073251262756943, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944875114498756639, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944875114498756639, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8133241731321666645, guid: fdce51d87271e43dd9bd4af999e6f38a, type: 3}
       propertyPath: m_Name

@@ -3,28 +3,35 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
+/*
+Handles scene loading.
+
+By Ramatoulaye Bah, edited by Batsambuu Batbold for the effect
+*/
+
 public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
-    private SceneFade _sceneFade;
-    // public void InteractiveClues() {
-    //     SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
-    // }
+
+    private SceneFade sceneFade;
+
     private void Awake()
     {
-        
-        if (instance == null) {
+        if (instance == null)
+        {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            _sceneFade = GetComponentInChildren<SceneFade>();
+            sceneFade = GetComponentInChildren<SceneFade>();
         }
-        else {
+        else
+        {
             Destroy(gameObject);
         }
     }
+
     private IEnumerator Start()
     {
-        yield return _sceneFade.FadeInCoroutine();
+        yield return sceneFade.FadeInCoroutine(0.3f);
     }
 
     public void ChangeScene(string sceneName)
@@ -34,8 +41,8 @@ public class SceneController : MonoBehaviour
 
     private IEnumerator LoadSceneCoroutine(string sceneName)
     {
-        yield return _sceneFade.FadeOutCoroutine();
+        yield return sceneFade.FadeOutCoroutine(0.3f);
         yield return SceneManager.LoadSceneAsync(sceneName);
-        yield return _sceneFade.FadeInCoroutine();
+        yield return sceneFade.FadeInCoroutine(0.3f);
     }
 }

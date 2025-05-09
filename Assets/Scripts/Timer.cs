@@ -1,22 +1,25 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+/*
+Handles the countdown timer and game win/lose conditions.
+
+By Batsambuu Batbold, Ramatoulaye Bah
+*/
 
 public class Timer : MonoBehaviour
 {
     public static Timer instance;
+
     public float totalTime = 600f;
-    private float remainingTime;
-    public TextMeshProUGUI timerText; 
-
+    public TextMeshProUGUI timerText;
     public GameObject gameOverBG;
-
     public GameObject room;
-    private bool isGameOver = false;
-
     public GameObject playButton;
+
+    private float remainingTime;
+    private bool isGameOver = false;
 
     void Awake()
     {
@@ -33,66 +36,91 @@ public class Timer : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    void Start()
+    private void Start()
     {
         remainingTime = totalTime;
-        gameOverBG.SetActive(false);
+        if (gameOverBG != null)
+        {
+            gameOverBG.SetActive(false);
+        }
     }
 
-    void Update()
+    private void Update()
     {
-        if(isGameOver) {
-            return;
-        }
-        if (remainingTime > 0)
+        if (isGameOver || timerText == null) return;
+
+        if (remainingTime > 0f)
         {
             remainingTime -= Time.deltaTime;
-            int minutes = Mathf.FloorToInt(remainingTime / 60);
-            int seconds = Mathf.FloorToInt(remainingTime % 60);
-            timerText.text = $"Time: {minutes:00}:{seconds:00}";
-        } else {
-            remainingTime = 0;
-            timerText.text = "Time: 00:00";
-
-            // TO FIX: set the clues inactive when the game over bg is active
-            if (room != null)
-            {
-                Collider2D[] colliders = room.GetComponentsInChildren<Collider2D>(true);
-                foreach (var col in colliders)
-                {
-                    col.enabled = false;
-                }
-            }
-            isGameOver = true;
-
-            if (gameOverBG != null) {
-                gameOverBG.SetActive(true);
-            }
+            UpdateTimerText();
         }
-
-
-
-        
+        else
+        {
+            EndGame();
+        }
     }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         timerText = GameObject.Find("Timer")?.GetComponent<TextMeshProUGUI>();
+        UpdateTimerText();
     }
 
     public float GetRemainingTime()
-        {
-            return remainingTime;
-        }
+    {
+        return remainingTime;
+    }
 
-    public void PlayAgain() {
-        isGameOver = false;
-        gameOverBG.SetActive(false);
-        totalTime = 600f;
-        remainingTime = totalTime;
+    private void UpdateTimerText()
+    {
         int minutes = Mathf.FloorToInt(remainingTime / 60);
         int seconds = Mathf.FloorToInt(remainingTime % 60);
         timerText.text = $"Time: {minutes:00}:{seconds:00}";
-        
+    }
+
+    private void EndGame()
+    {
+        remainingTime = 0f;
+        UpdateTimerText();
+        isGameOver = true;
+
+        if (room != null)
+        {
+            foreach (var col in room.GetComponentsInChildren<Collider2D>(true))
+            {
+                col.enabled = false;
+            }
+        }
+
+        if (gameOverBG != null)
+        {
+            gameOverBG.SetActive(true);
+        }
+    }
+
+    public void PlayAgain()
+    {
+        isGameOver = false;
+        ResetTimer();
+
+        if (gameOverBG != null)
+        {
+            gameOverBG.SetActive(false);
+        }
+
+        if (room != null)
+        {
+            foreach (var col in room.GetComponentsInChildren<Collider2D>(true))
+            {
+                col.enabled = true;
+            }
+        }
+
+        UpdateTimerText();
+    }
+
+    public void ResetTimer()
+    {
+        remainingTime = totalTime;
     }
 }

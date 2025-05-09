@@ -1,128 +1,131 @@
 using UnityEngine;
 
+/*
+Handles the logic for the clock clue,
+including rotating the clock hands and verifying if the correct time is set.
+
+The correct clock time can be configured in the Unity editor.
+
+By Batsambuu Batbold with the help of ChatGPT, modified by Katherene Lugo for the painting scene
+*/
+
 public class Clock : MonoBehaviour
 {
     public GameObject minuteHand;
-    private Transform min;
-    private Collider2D minCol;
-
     public GameObject hourHand;
-    private Transform hr;
-    private Collider2D hrCol;
-    private Vector3 screenPos;
-    private float angleOffset;
-
     public int correctHour;
     public int correctMinute;
 
-    private bool isUnlocked = false;
-
-    private bool testHourDrag = false;
-    private bool hasDraggedHour = false;
-
-    private bool testMinDrag = false;
-    private bool hasDraggedMin = false;
-
     public static int count = 0;
-    private void Start(){
-        min = minuteHand.transform;
-        minCol = minuteHand.GetComponent<Collider2D>();
 
-        hr = hourHand.transform;
-        hrCol = hourHand.GetComponent<Collider2D>();
+    private Transform minute;
+    private Transform hour;
+    private Collider2D minuteCollider;
+
+    private bool isDragging = false;
+    private bool isUnlocked = false;
+    private bool hasDragged = false;
+
+    private Vector3 clockAngle;
+    private Vector3 clockPos;
+
+    private float totalMinuteRotation = 0f;
+    private float totalHourRotation = 0f;
+    private float lastMouseAngle;
+
+
+    private void Start(){
+        minute = minuteHand.transform;
+        minuteCollider = minuteHand.GetComponent<Collider2D>();
+        hour = hourHand.transform;
     }
 
     private void Update()
-    {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetMouseButtonDown(0))
-        {   
-            if(minCol == Physics2D.OverlapPoint(mousePos)){
-                testMinDrag = true;
-                hasDraggedMin = true;
-                screenPos = Camera.main.WorldToScreenPoint(min.position);
-                Vector3 vec3 = Input.mousePosition - screenPos;
-                angleOffset = (Mathf.Atan2(min.right.y, min.right.x) - Mathf.Atan2(vec3.y, vec3.x)) * Mathf.Rad2Deg;
-            }
-            if(hrCol == Physics2D.OverlapPoint(mousePos)){
-                testHourDrag = true;
-                hasDraggedHour = true;
-                screenPos = Camera.main.WorldToScreenPoint(hr.position);
-                Vector3 vec3 = Input.mousePosition - screenPos;
-                angleOffset = (Mathf.Atan2(hr.right.y, hr.right.x) - Mathf.Atan2(vec3.y, vec3.x)) * Mathf.Rad2Deg;
-            }
-        }
-        if (Input.GetMouseButton(0))
+    {   
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 centerToMouse = mouseWorldPos - minute.position;
+
+        if (Input.GetMouseButtonDown(0) && minuteCollider == Physics2D.OverlapPoint(mouseWorldPos))
         {
-            if(testMinDrag){
-            // if(minCol == Physics2D.OverlapPoint(mousePos)){
-                Vector3 vec3 = Input.mousePosition - screenPos;
-                float angle = Mathf.Atan2(vec3.y, vec3.x) * Mathf.Rad2Deg;
-                min.eulerAngles = new Vector3(0, 0, angle + angleOffset);
-            }
-            if(testHourDrag){
-            // if(hrCol == Physics2D.OverlapPoint(mousePos)){
-                Vector3 vec3 = Input.mousePosition - screenPos;
-                float angle = Mathf.Atan2(vec3.y, vec3.x) * Mathf.Rad2Deg;
-                hr.eulerAngles = new Vector3(0, 0, angle + angleOffset);
-            }
+            isDragging = true;
+            totalMinuteRotation = minute.eulerAngles.z;
+            totalHourRotation = hour.eulerAngles.z;
+            lastMouseAngle = Mathf.Atan2(centerToMouse.y, centerToMouse.x) * Mathf.Rad2Deg;
+            hasDragged = true;
         }
-        if(Input.GetMouseButtonUp(0)){
-            if(testMinDrag)
+
+        if (Input.GetMouseButton(0) && isDragging)
+        {
+            float currentMouseAngle = Mathf.Atan2(centerToMouse.y, centerToMouse.x) * Mathf.Rad2Deg;
+            float deltaAngle = Mathf.DeltaAngle(lastMouseAngle, currentMouseAngle);
+
+            totalMinuteRotation += deltaAngle;
+            totalHourRotation += deltaAngle / 12f;
+
+            minute.eulerAngles = new Vector3(0, 0, totalMinuteRotation);
+            hour.eulerAngles = new Vector3(0, 0, totalHourRotation);
+
+            lastMouseAngle = currentMouseAngle;
+        }
+
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            if (isDragging)
             {
-                testMinDrag = false;
+                isDragging = false;
             }
 
-            if(testHourDrag)
+            if (!isDragging && hasDragged)
             {
-                testHourDrag = false;
+                CheckTime();
             }
-
-            if(!testMinDrag && !testHourDrag && hasDraggedHour && hasDraggedMin)
-            {
-                Time();
-            }
-            // Time();
         }
     }
 
 
-    private void Time()
+    private void CheckTime()
     {
-        if(!isUnlocked){
-            float minAngle = min.eulerAngles.z;
-            float hrAngle = hr.eulerAngles.z;
-        
+        if (!isUnlocked)
+        {
+            float minAngle = minute.eulerAngles.z;
+            float hrAngle = hour.eulerAngles.z;
+
             int mins = Mathf.RoundToInt(minAngle / 360f * 60f);
-            int hrs = Mathf.RoundToInt(hrAngle / 360f * 12f);
-        
-            if (hrs == 0){
+            int hrs = Mathf.FloorToInt(hrAngle / 360f * 12f) + 1;
+
+            if (hrs == 0)
+            {
                 hrs = 12;
-            } else if(hrs != 12){
+            }
+            else if (hrs != 12)
+            {
                 hrs = 12 - hrs;
             }
 
             mins = (105 - mins) % 60;
-        
+
             Debug.Log("Hour:" + hrs + ", " + " Minute:" + mins);
             Debug.Log("Correct hour:" + correctHour + ", " + " Correct minute:" + correctMinute);
 
-            if(Mathf.Abs(correctMinute - mins) < 2 && correctHour == hrs){
-                Debug.Log("Corret Time. Open the Picture");
+            if (Mathf.Abs(correctMinute - mins) < 2 && correctHour == hrs)
+            {
+                Debug.Log("Correct Time. Open the Picture");
                 AudioManager.instance.PlayUnlocked();
                 isUnlocked = true;
                 ClueManager.instance.UnlockObject("Painting");
                 SceneController.instance.ChangeScene("RoomScene");
-                if(count == 0)
+
+                if (count == 0)
                 {
                     count++;
                 }
             }
-            else{
+            else
+            {
                 Debug.Log("Wrong Time");
                 AudioManager.instance.PlayNegative();
                 ClueManager.instance.isPaintingAttemptWrong = true;
-
             }
         }
     }
