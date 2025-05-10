@@ -123,4 +123,8 @@ public class Timer : MonoBehaviour
     {
         remainingTime = totalTime;
     }
+    public void StopTimer()
+{
+    isGameOver = true;
+}
 }

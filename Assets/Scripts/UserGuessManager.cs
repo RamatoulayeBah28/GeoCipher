@@ -28,6 +28,7 @@ public class UserGuessManager : MonoBehaviour
             inputCanvas.SetActive(false);
             exitButton.SetActive(false);
             winCanvas.SetActive(true);
+            Timer.instance.StopTimer();
 
         }
     }
